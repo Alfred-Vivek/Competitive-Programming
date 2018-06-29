@@ -1,11 +1,11 @@
 def can_two_movies_fill_flight(movie_lengths, flight_length):
-    watch = []
+    watch = {}
     for x in movie_lengths:
         c = flight_length-x
         if c in watch:
             return True
         else:
-            watch.append(x)
+            watch[x] = True
     return False
 
 # Test Cases

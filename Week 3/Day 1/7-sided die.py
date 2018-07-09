@@ -5,9 +5,8 @@ def rand5():
 
 def rand7():
     while True:
-        r = rand5() + 2
-        if r < 8:
-            return r
+        r = (rand5() + rand5() -1) % 7
+        return r
 
 print ('Rolling 7-sided die...')
 print (rand7())

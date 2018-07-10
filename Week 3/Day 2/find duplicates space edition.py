@@ -1,6 +1,5 @@
 import unittest
 
-
 def find_repeat(arr):
     # Find a number that appears more than once
     for i in range(0, len(arr)):

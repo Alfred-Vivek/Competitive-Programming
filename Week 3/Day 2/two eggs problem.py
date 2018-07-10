@@ -1,17 +1,11 @@
-neededDict = {}
-def needed(eggs, floors):
-    if (eggs, floors) in neededDict:
-        return neededDict[(eggs, floors)]
-    if eggs == 1:
-        return floors
-    if eggs > 1:
-        minimum = floors
-        for f in range(floors):
-            resultIfEggBreaks = needed(eggs - 1, f)
-            resultIfEggSurvives = needed(eggs, floors - (f + 1))
-            result = max(resultIfEggBreaks, resultIfEggSurvives)
-            if result < minimum:
-                minimum = result
-        neededDict[(eggs, floors)] = 1 + minimum
-        return 1 + minimum
-print (needed(2, 100))
+import math
+def minAttempts(eggs,floors):
+	t1 = floors * 2
+	t2 = math.sqrt((1^2) + (4*1*t1))
+	t3 = (-1 + t2)/2
+	t4 = (-1 - t2)/2
+	print(t3,t4)
+	return math.ceil(max(t3,t4))
+floors = 100
+eggs = 2
+print(minAttempts(eggs,floors))

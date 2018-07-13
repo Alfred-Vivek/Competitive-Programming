@@ -2,8 +2,6 @@ import unittest
 
 def merge_lists(l1,l2):
     sorted_list = []
-    l1 = l1[:]
-    l2 = l2[:]
     while (l1 and l2):
         if (l1[0] <= l2[0]):
             item = l1.pop(0)

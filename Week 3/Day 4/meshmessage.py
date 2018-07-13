@@ -1,8 +1,6 @@
 import unittest
 
 def bfs_get_path(graph, start_node, end_node):
-    if not start_node or not end_node:
-        raise ValueError("Incorrect input")
     if start_node == end_node:
         return [start_node]
     route = [start_node]

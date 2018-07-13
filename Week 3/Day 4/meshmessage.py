@@ -1,6 +1,8 @@
 import unittest
 
 def bfs_get_path(graph, start_node, end_node):
+    if start_node not in graph or end_node not in graph:
+        raise ValueError("Not in Graph")
     if start_node == end_node:
         return [start_node]
     route = [start_node]
@@ -67,6 +69,14 @@ class Test(unittest.TestCase):
         actual = bfs_get_path(self.graph, 'a', 'f')
         expected = None
         self.assertEqual(actual, expected)
+
+    def test_end_node_not_present(self):
+        with self.assertRaises(Exception):
+            bfs_get_path(self.graph, 'a', 'h')
+
+    def test_start_node_not_present(self):
+        with self.assertRaises(Exception):
+            bfs_get_path(self.graph, 'h', 'a')
 
 
 unittest.main(verbosity=2)
